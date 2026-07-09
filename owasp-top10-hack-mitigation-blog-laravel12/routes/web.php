@@ -6,6 +6,12 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\PreviewController;
+
+// ...altre rotte...
+
+Route::get('/preview', [PreviewController::class, 'index'])->name('preview.index');
+Route::post('/preview', [PreviewController::class, 'show'])->name('preview.show');
 
 /*
 |--------------------------------------------------------------------------
@@ -72,3 +78,6 @@ Route::view('/contact', 'contact')->name('contact');
 
 Route::post('/upload-file', [UserController::class, 'uploadFile'])
     ->name('upload.file');
+
+
+    
